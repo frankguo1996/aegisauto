@@ -96,14 +96,14 @@ const cases = [
   },
   {
     title: "VW Atlas Custom PPF Installation",
-    vehicle: "Volkswagen Atlas Exceline",
+    vehicle: "2026 Volkswagen Atlas Exceline",
     service: "Custom Rocker Panel + Front bumper PPF",
     image: "/images/Atlas.jpeg",
     desc: "Terminax UltraNax Nano custom cut",
   },
   {
     title: "Phantom Red PPF Cybertruck",
-    vehicle: "Tesla Cybertruck",
+    vehicle: "2024 Tesla Cybertruck",
     service: "Colored Max Package",
     image: "/images/Cybertruck.jpeg",
     desc: "Terminax Chroma-X Black Phantom Red protect the Cybertruck",
@@ -372,58 +372,53 @@ export default function Home() {
       </section>
 
       {/* Gallery */}
-      <section id="gallery" className="border-t border-white/10 px-6 py-24">
-        <div className="mx-auto max-w-6xl">
-          <p className="mb-3 text-sm uppercase tracking-[0.3em] text-neutral-500">
-            Gallery
-          </p>
-          <>
+        <section id="gallery" className="border-t border-white/10 px-6 py-24">
+          <div className="mx-auto max-w-6xl">
+            <p className="mb-3 text-sm uppercase tracking-[0.3em] text-neutral-500">
+              Gallery
+            </p>
+
             <div className="mb-4 h-1 w-16 rounded-full bg-red-600" />
 
-            <h2 className="text-4xl font-bold">
-              Recent Work
-            </h2>
-          </>
+            <h2 className="text-4xl font-bold">Recent Work</h2>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-          {cases.map((item) => (
-            <div
-            key={item.title}
-            className="overflow-hidden rounded-3xl border border-white/10 bg-neutral-900 transition hover:border-red-600"
-          >
-            <div className="relative h-72 overflow-hidden">
-              <Image
-                src={item.image}
-                alt={item.title}
-                fill
-                className="object-cover transition duration-500 hover:scale-105"
-              />
-            </div>
-          
-            <div className="p-6">
-              <h3 className="text-xl font-semibold">
-                {item.title}
-              </h3>
-          
-              <div className="mt-3 flex flex-wrap gap-2">
-                <span className="rounded-full bg-red-600/20 px-3 py-1 text-xs text-red-400">
-                  {item.vehicle}
-                </span>
-          
-                <span className="rounded-full bg-white/10 px-3 py-1 text-xs text-neutral-300">
-                  {item.service}
-                </span>
-              </div>
-          
-              <p className="mt-4 text-sm leading-6 text-neutral-400">
-                {item.desc}
-              </p>
+            <div className="mt-10 grid gap-6 md:grid-cols-2">
+              {cases.map((item) => (
+                <div
+                  key={item.title}
+                  className="group overflow-hidden rounded-3xl border border-white/10 bg-neutral-900 transition hover:border-red-600"
+                >
+                  <div className="relative h-72 overflow-hidden">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      className="object-cover object-[center_65%] transition duration-500 group-hover:scale-105"
+                    />
+                  </div>
+
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold">{item.title}</h3>
+
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      <span className="rounded-full bg-red-600/20 px-3 py-1 text-xs text-red-400">
+                        {item.vehicle}
+                      </span>
+
+                      <span className="rounded-full bg-white/10 px-3 py-1 text-xs text-neutral-300">
+                        {item.service}
+                      </span>
+                    </div>
+
+                    <p className="mt-4 text-sm leading-6 text-neutral-400">
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-          ))}
-          </div>
-        </div>
-      </section>
+        </section>
 
       {/* Quote Form */}
       <section id="quote" className="border-t border-red-600/20 px-6 py-24">
