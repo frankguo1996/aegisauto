@@ -71,28 +71,45 @@ const products = [
   },
 ];
 
+
 const cases = [
   {
-    title: "BMW i4 Full Front PPF",
+    title: "BMW i4 Full Front Protected",
+    vehicle: "2026 BMW i4M50",
+    service: "Pro Package",
     image: "/images/i4.jpeg",
+    desc: "Protected with Terminax UltraNax Nano",
   },
   {
-    title: "BMW Z4 Max Package with Clear PPF",
+    title: "BMW Z4 Full Car",
+    vehicle: "2026 BMW Z4M40i",
+    service: "Max Package",
     image: "/images/Z4.jpeg",
+    desc: "Protected with Xpel Fusion Plus",
   },
   {
-    title: "BMW X5M Max Package with Matte PPF",
+    title: "BMW X5M Matte Transformation",
+    vehicle: "2026 BMW X5M",
+    service: "Matte Max Package",
     image: "/images/X5M.jpeg",
+    desc: "GSWF DEFENDER Matte Protection PPF",
   },
   {
-    title: "Customized PPF for VW Atlas Rocker Panel",
+    title: "VW Atlas Custom PPF Installation",
+    vehicle: "Volkswagen Atlas Exceline",
+    service: "Custom Rocker Panel + Front bumper PPF",
     image: "/images/Atlas.jpeg",
+    desc: "Terminax UltraNax Nano custom cut",
   },
   {
-    title: "Tesla Cybertruck Full Body PPF",
+    title: "Phantom Red PPF Cybertruck",
+    vehicle: "Tesla Cybertruck",
+    service: "Colored Max Package",
     image: "/images/Cybertruck.jpeg",
+    desc: "Terminax Chroma-X Black Phantom Red protect the Cybertruck",
   },
 ];
+
 
 export default function Home() {
   return (
@@ -369,28 +386,31 @@ export default function Home() {
           </>
 
           <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {cases.map((item) => (
-              <div
-                key={item.title}
-                className="overflow-hidden rounded-3xl bg-neutral-900"
-              >
-                <div className="relative h-72">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold">{item.title}</h3>
-                  <p className="mt-2 text-sm text-neutral-400">
-                    Professional PPF installation completed in Calgary.
-                  </p>
-                </div>
+          {cases.map((item) => (
+            <div
+              key={item.title}
+              className="overflow-hidden rounded-3xl bg-neutral-900"
+            >
+              <div className="relative h-72">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="object-cover"
+                />
               </div>
-            ))}
+
+              <div className="mt-2 flex gap-2 text-xs">
+                <span className="rounded-full bg-red-600/20 px-3 py-1 text-red-400">
+                  {item.vehicle}
+                </span>
+
+                <span className="rounded-full bg-white/10 px-3 py-1 text-neutral-300">
+                  {item.service}
+                </span>
+              </div>
+            </div>
+          ))}
           </div>
         </div>
       </section>
