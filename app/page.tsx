@@ -1,65 +1,607 @@
 import Image from "next/image";
 
+const navItems = [
+  { name: "Services", href: "#services" },
+  { name: "Products", href: "#products" },
+  { name: "Pricing", href: "#pricing" },
+  { name: "Gallery", href: "#gallery" },
+  { name: "Quote", href: "#quote" },
+];
+
+const services = [
+  {
+    title: "Paint Protection Film",
+    desc: "Protect high-impact areas from rock chips, road debris, scratches, and Calgary winter conditions.",
+  },
+  {
+    title: "Pre-Cut PPF Kits",
+    desc: "Precision-cut film kits for DIY users or individual installers, ready for installation.",
+  },
+  {
+    title: "Ceramic Coating",
+    desc: "Add gloss, easier washing, and long-term paint protection for your vehicle.",
+  },
+];
+
+const pricing = [
+  {
+    name: "Base Package",
+    price: "From $799",
+    items: ["Partial hood", "Partial fenders", "Front bumper", "Mirror caps"],
+  },
+  {
+    name: "Pro Package",
+    price: "From $1,399",
+    items: [
+      "Full hood",
+      "Full fenders",
+      "Front bumper",
+      "Mirror caps",
+      "Headlights",
+      "A-pillars",
+      "Partial roof",
+    ],
+  },
+  {
+    name: "Max Package",
+    price: "Quote Only",
+    items: [
+      "Complete exterior coverage",
+      "Custom install",
+      "Best for high-end vehicles",
+    ],
+  },
+];
+
+const products = [
+  {
+    title: "Gloss PPF",
+    image: "/images/Clear.png",
+    desc: "Clear protection film with factory-style gloss finish.",
+  },
+  {
+    title: "Matte PPF",
+    image: "/images/Matte.png",
+    desc: "Transforms gloss paint into a satin/matte finish while adding protection.",
+  },
+  {
+    title: "Colored PPF",
+    image: "/images/Colored.png",
+    desc: "Paint protection and color change in one solution.",
+  },
+];
+
+const cases = [
+  {
+    title: "BMW i4 Full Front PPF",
+    image: "/images/i4.jpeg",
+  },
+  {
+    title: "BMW Z4 Max Package with Clear PPF",
+    image: "/images/Z4.jpeg",
+  },
+  {
+    title: "BMW X5M Max Package with Matte PPF",
+    image: "/images/X5M.jpeg",
+  },
+  {
+    title: "Customized PPF for VW Atlas Rocker Panel",
+    image: "/images/Atlas.jpeg",
+  },
+  {
+    title: "Tesla Cybertruck Full Body PPF",
+    image: "/images/Cybertruck.jpeg",
+  },
+];
+
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main className="min-h-screen bg-black text-white">
+      {/* Navbar */}
+      <header className="fixed left-0 top-0 z-50 w-full border-b border-red-600/20 bg-zinc-950/80 backdrop-blur">
+        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+
+          <a href="#" className="flex items-center gap-3">
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-zinc-100 p-1 shadow-lg">
+              <Image
+                src="/images/logo.png"
+                alt="Aegis Auto Film"
+                width={40}
+                height={40}
+                className="object-contain"
+              />
+            </div>
+
+            <div>
+              <p className="text-lg font-bold tracking-tight">
+                Aegis Auto Film
+              </p>
+
+              <div className="mt-1 h-[2px] w-16 rounded-full bg-red-600" />
+            </div>
+          </a>
+
+          <nav className="hidden gap-8 text-sm text-neutral-300 md:flex">
+            {navItems.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                className="transition hover:text-red-500"
+              >
+                {item.name}
+              </a>
+            ))}
+          </nav>
+
+    <a
+      href="tel:4038150249"
+      className="rounded-full bg-red-600 px-5 py-2 text-sm font-semibold text-white transition hover:bg-red-700"
+    >
+      Call
+    </a>
+
+  </div>
+</header>
+
+      {/* Hero */}
+      <section className="relative flex min-h-screen items-center overflow-hidden">
+
+        <div className="absolute inset-0">
+          <Image
+            src="/images/M3T.jpg"
+            alt="Background"
+            fill
+            priority
+            className="object-cover"
+          />
+
+          <div className="absolute inset-0 bg-black/25" />
+
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/55 to-transparent" />
+        </div>
+
+        <div className="relative z-10 mx-auto w-full max-w-6xl px-6">
+
+          <p className="mb-4 uppercase tracking-[0.4em] text-red-500">
+            Aegis Auto Film
+          </p>
+
+          <h1 className="max-w-4xl text-5xl font-bold leading-tight md:text-7xl">
+            Protect What
+            <span className="text-red-500"> Drives You</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
+
+          <p className="mt-6 max-w-2xl text-lg text-neutral-300">
+            Premium Paint Protection Film, Ceramic Coating for Calgary Drivers
+          </p>
+
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+
             <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="tel:4038150249"
+              className="rounded-full bg-red-600 px-6 py-3 text-center font-semibold text-white transition hover:bg-red-700"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
+              Call Now
+            </a>
+
             <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="mailto:sales@aegisautofilm.com"
+              className="rounded-full border border-white/20 px-6 py-3 text-center font-semibold text-white transition hover:bg-white hover:text-black"
             >
-              Learning
-            </a>{" "}
-            center.
+              Get A Quote
+            </a>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* About */}
+      <section className="border-t border-red-600/20 px-6 py-24">
+        <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-2 md:items-center">
+          <div>
+            <div className="mb-4 h-1 w-16 rounded-full bg-red-600" />
+
+            <h2 className="text-4xl font-bold">
+              Mobile PPF Service Built Around Convenience
+            </h2>
+
+            <p className="mt-6 text-lg leading-8 text-neutral-400">
+              Aegis Auto Film provides mobile paint protection film, ceramic coating,
+              and pre-cut PPF kit solutions for Calgary vehicle owners, enthusiasts,
+              and individual installers.
+            </p>
+
+            <p className="mt-4 text-lg leading-8 text-neutral-400">
+              Instead of requiring every customer to visit a shop, we focus on
+              flexible mobile service, clean installation standards, and practical
+              protection packages designed for real driving conditions in Alberta.
+            </p>
+          </div>
+
+          <div className="rounded-3xl border border-white/10 bg-neutral-900 p-8">
+            <h3 className="text-2xl font-semibold">Why Aegis Auto Film</h3>
+
+            <ul className="mt-6 space-y-4 text-neutral-400">
+              <li>✓ Mobile service in Calgary and surrounding areas</li>
+              <li>✓ Paint protection film for daily drivers and high-end vehicles</li>
+              <li>✓ Pre-cut PPF kits for DIY users and installers</li>
+              <li>✓ Ceramic coating for gloss and easier maintenance</li>
+              <li>✓ Practical packages based on real-world driving needs</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+
+      {/* Services */}
+      <section id="services" className="border-t border-white/10 px-6 py-24">
+        <div className="mx-auto max-w-6xl">
+          <p className="mb-3 text-sm uppercase tracking-[0.3em] text-neutral-500">
+            Services
+          </p>
+          <>
+            <div className="mb-4 h-1 w-16 rounded-full bg-red-600" />
+
+            <h2 className="text-4xl font-bold">
+              What We Offer
+            </h2>
+          </>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {services.map((service) => (
+              <div
+                key={service.title}
+                className="rounded-3xl border border-white/10 bg-white/[0.03] p-6"
+              >
+                <h3 className="text-xl font-semibold">{service.title}</h3>
+                <p className="mt-4 text-sm leading-6 text-neutral-400">
+                  {service.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Products */}
+      <section id="products" className="border-t border-white/10 px-6 py-24">
+        <div className="mx-auto max-w-6xl">
+          <p className="mb-3 text-sm uppercase tracking-[0.3em] text-neutral-500">
+            Products
+          </p>
+          <>
+            <div className="mb-4 h-1 w-16 rounded-full bg-red-600" />
+
+            <h2 className="text-4xl font-bold">
+              Film Options
+            </h2>
+          </>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {products.map((product) => (
+              <div
+                key={product.title}
+                className="
+                    group
+                    rounded-3xl
+                    border
+                    border-white/10
+                    bg-neutral-900
+                    p-6
+                    transition
+                    hover:border-red-600
+                    hover:bg-neutral-800
+                    "
+              >
+                <div className="relative mb-6 h-48 overflow-hidden rounded-2xl">
+                  <Image
+                    src={product.image}
+                    alt={product.title}
+                    fill
+                    className="object-cover transition duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <h3 className="text-2xl font-semibold">{product.title}</h3>
+                <p className="mt-4 text-neutral-400">{product.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section id="pricing" className="border-t border-white/10 px-6 py-24">
+        <div className="mx-auto max-w-6xl">
+          <p className="mb-3 text-sm uppercase tracking-[0.3em] text-neutral-500">
+            Pricing
+          </p>
+          <>
+            <div className="mb-4 h-1 w-16 rounded-full bg-red-600" />
+
+            <h2 className="text-4xl font-bold">
+              Popular Packages
+            </h2>
+          </>
+          
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {pricing.map((plan, index) => (
+              <div
+                key={plan.name}
+                  className={`rounded-3xl p-6 ${
+                    index === 1
+                      ? "border-2 border-red-600 bg-red-600/5"
+                      : "border border-white/10"
+                  }`}
+              >
+                <h3 className="text-xl font-semibold">{plan.name}</h3>
+                <p className="mt-4 text-3xl font-bold">{plan.price}</p>
+
+                <ul className="mt-6 space-y-3 text-sm text-neutral-400">
+                  {plan.items.map((item) => (
+                    <li key={item}>✓ {item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-6 text-sm text-neutral-500">
+            Final pricing may vary depending on vehicle size, condition, film
+            selection, and installation complexity.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Gallery */}
+      <section id="gallery" className="border-t border-white/10 px-6 py-24">
+        <div className="mx-auto max-w-6xl">
+          <p className="mb-3 text-sm uppercase tracking-[0.3em] text-neutral-500">
+            Gallery
+          </p>
+          <>
+            <div className="mb-4 h-1 w-16 rounded-full bg-red-600" />
+
+            <h2 className="text-4xl font-bold">
+              Recent Work
+            </h2>
+          </>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            {cases.map((item) => (
+              <div
+                key={item.title}
+                className="overflow-hidden rounded-3xl bg-neutral-900"
+              >
+                <div className="relative h-72">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold">{item.title}</h3>
+                  <p className="mt-2 text-sm text-neutral-400">
+                    Professional PPF installation completed in Calgary.
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Quote Form */}
+      <section id="quote" className="border-t border-red-600/20 px-6 py-24">
+        <div className="mx-auto max-w-4xl">
+          <div className="mb-4 h-1 w-16 rounded-full bg-red-600" />
+
+          <h2 className="text-4xl font-bold">
+            Request A Mobile PPF Quote
+          </h2>
+
+          <p className="mt-4 text-neutral-400">
+            Tell us what vehicle you have and what service you are interested in.
+            We will get back to you with the next steps.
+          </p>
+
+          <form
+            action="https://formspree.io/f/xpqelanr"
+            method="POST"
+            className="mt-10 grid gap-5"
+          >
+            <div className="grid gap-5 md:grid-cols-2">
+              <input
+                name="name"
+                type="text"
+                placeholder="Your Name"
+                required
+                className="rounded-2xl border border-white/10 bg-neutral-900 px-5 py-4 text-white outline-none focus:border-red-600"
+              />
+
+              <input
+                name="phone"
+                type="tel"
+                placeholder="Phone Number"
+                required
+                className="rounded-2xl border border-white/10 bg-neutral-900 px-5 py-4 text-white outline-none focus:border-red-600"
+              />
+            </div>
+
+            <input
+              name="email"
+              type="email"
+              placeholder="Email Address"
+              className="rounded-2xl border border-white/10 bg-neutral-900 px-5 py-4 text-white outline-none focus:border-red-600"
+            />
+              <input
+              name="vehicle"
+              type="text"
+              placeholder="Vehicle Year / Make / Model"
+              required
+              className="rounded-2xl border border-white/10 bg-neutral-900 px-5 py-4 text-white outline-none focus:border-red-600"
+            />
+
+            <select
+              name="service"
+              className="rounded-2xl border border-white/10 bg-neutral-900 px-5 py-4 text-white outline-none focus:border-red-600"
+            >
+              <option>Paint Protection Film</option>
+              <option>Pre-Cut PPF Kits</option>
+              <option>Ceramic Coating</option>
+              <option>Not Sure Yet</option>
+            </select>
+
+            <textarea
+              name="message"
+              placeholder="Tell us what you are looking for..."
+              rows={5}
+              className="rounded-2xl border border-white/10 bg-neutral-900 px-5 py-4 text-white outline-none focus:border-red-600"
+            />
+
+            <button
+              type="submit"
+              className="rounded-full bg-red-600 px-8 py-4 font-semibold text-white transition hover:bg-red-700"
+            >
+              Submit Quote Request
+            </button>
+          </form>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section
+        id="contact"
+        className="border-t border-red-600/20 px-6 py-28"
+      >
+        <div className="mx-auto max-w-4xl text-center">
+
+          <div className="mx-auto mb-6 h-1 w-20 rounded-full bg-red-600" />
+
+          <h2 className="text-4xl font-bold md:text-5xl">
+            Ready To Protect Your Investment?
+          </h2>
+
+          <p className="mt-6 text-lg text-neutral-400">
+            Whether you're looking for Paint Protection Film,
+            Ceramic Coating, or Custom Pre-Cut PPF Kits,
+            we're here to help.
+          </p>
+
+          <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
+
+            <a
+              href="tel:4038150249"
+              className="
+                rounded-full
+                bg-red-600
+                px-8
+                py-4
+                font-semibold
+                text-white
+                transition
+                hover:bg-red-700
+              "
+            >
+              Call Now
+            </a>
+
+            <a
+              href="mailto:sales@aegisautofilm.com"
+              className="
+                rounded-full
+                border
+                border-white/20
+                px-8
+                py-4
+                font-semibold
+                text-white
+                transition
+                hover:bg-white
+                hover:text-black
+              "
+            >
+              Request A Quote
+            </a>
+
+          </div>
+
+          <div className="mt-12 text-sm text-neutral-500">
+            Calgary, Alberta • Paint Protection Film • Ceramic Coating • Pre-Cut PPF Kits
+          </div>
+
+        </div>
+      </section>
+
+
+      {/* Footer */}
+        <footer className="border-t border-red-600/20 bg-zinc-950 px-6 py-12">
+        <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-3">
+          <div>
+            <div className="flex items-center gap-3">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-100 p-1.5">
+                <Image
+                  src="/images/logo.png"
+                  alt="Aegis Auto Film logo"
+                  width={44}
+                  height={44}
+                  className="object-contain"
+                />
+              </div>
+
+              <div>
+                <p className="text-lg font-bold">Aegis Auto Film</p>
+                <div className="mt-1 h-[2px] w-16 rounded-full bg-red-600" />
+              </div>
+            </div>
+
+            <p className="mt-5 max-w-sm text-sm leading-6 text-neutral-400">
+              Mobile paint protection film, ceramic coating, and precision-cut PPF
+              kit solutions for Calgary vehicle owners and installers.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="font-semibold text-white">Services</h3>
+            <ul className="mt-4 space-y-3 text-sm text-neutral-400">
+              <li>Paint Protection Film</li>
+              <li>Pre-Cut PPF Kits</li>
+              <li>Ceramic Coating</li>
+              <li>Mobile Installation</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-semibold text-white">Contact</h3>
+            <ul className="mt-4 space-y-3 text-sm text-neutral-400">
+              <li>
+                <a href="tel:4038150249" className="hover:text-red-500">
+                  403-815-0249
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:sales@aegisautofilm.com"
+                  className="hover:text-red-500"
+                >
+                  sales@aegisautofilm.com
+                </a>
+              </li>
+              <li>Mobile service in Calgary and surrounding areas</li>
+              <li>New location opening soon</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="mx-auto mt-10 flex max-w-6xl flex-col gap-3 border-t border-white/10 pt-6 text-sm text-neutral-500 md:flex-row md:items-center md:justify-between">
+          <p>© 2026 Aegis Auto Film. All rights reserved.</p>
+          <p>Calgary, Alberta • Mobile PPF Installation</p>
+        </div>
+      </footer>
+    </main>
   );
 }
