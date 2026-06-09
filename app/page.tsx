@@ -388,28 +388,38 @@ export default function Home() {
           <div className="mt-10 grid gap-6 md:grid-cols-2">
           {cases.map((item) => (
             <div
-              key={item.title}
-              className="overflow-hidden rounded-3xl bg-neutral-900"
-            >
-              <div className="relative h-72">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-
-              <div className="mt-2 flex gap-2 text-xs">
-                <span className="rounded-full bg-red-600/20 px-3 py-1 text-red-400">
+            key={item.title}
+            className="overflow-hidden rounded-3xl border border-white/10 bg-neutral-900 transition hover:border-red-600"
+          >
+            <div className="relative h-72 overflow-hidden">
+              <Image
+                src={item.image}
+                alt={item.title}
+                fill
+                className="object-cover transition duration-500 hover:scale-105"
+              />
+            </div>
+          
+            <div className="p-6">
+              <h3 className="text-xl font-semibold">
+                {item.title}
+              </h3>
+          
+              <div className="mt-3 flex flex-wrap gap-2">
+                <span className="rounded-full bg-red-600/20 px-3 py-1 text-xs text-red-400">
                   {item.vehicle}
                 </span>
-
-                <span className="rounded-full bg-white/10 px-3 py-1 text-neutral-300">
+          
+                <span className="rounded-full bg-white/10 px-3 py-1 text-xs text-neutral-300">
                   {item.service}
                 </span>
               </div>
+          
+              <p className="mt-4 text-sm leading-6 text-neutral-400">
+                {item.desc}
+              </p>
             </div>
+          </div>
           ))}
           </div>
         </div>
