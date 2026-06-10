@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const navItems = [
   { name: "Services", href: "#services" },
@@ -26,25 +27,28 @@ const services = [
 const pricing = [
   {
     name: "Base Package",
-    price: "From $799",
+    price: "From $899",
+    desc: "Essential front-end protection for daily driving.",
     items: ["Partial hood", "Partial fenders", "Front bumper", "Mirror caps"],
   },
   {
     name: "Pro Package",
     price: "From $1,399",
+    badge: "Best Seller",
+    desc: "More complete front-end protection for high-impact areas.",
     items: [
       "Full hood",
       "Full fenders",
       "Front bumper",
       "Mirror caps",
-      "Headlights",
       "A-pillars",
       "Partial roof",
     ],
   },
   {
     name: "Max Package",
-    price: "Quote Only",
+    price: "Get a Quote",
+    desc: "Complete vehicle coverage for maximum paint protection.",
     items: [
       "Complete exterior coverage",
       "Custom install",
@@ -107,6 +111,7 @@ const cases = [
     service: "Colored Max Package",
     image: "/images/Cybertruck.jpeg",
     desc: "Terminax Chroma-X Black Phantom Red protect the Cybertruck",
+    link: "/cybertruck-ppf",
   },
 ];
 
@@ -221,19 +226,23 @@ export default function Home() {
             <div className="mb-4 h-1 w-16 rounded-full bg-red-600" />
 
             <h2 className="text-4xl font-bold">
-              Mobile PPF Service Built Around Convenience
+              PPF Service Built Around Convenience
             </h2>
 
             <p className="mt-6 text-lg leading-8 text-neutral-400">
-              Aegis Auto Film provides mobile paint protection film, ceramic coating,
-              and pre-cut PPF kit solutions for Calgary vehicle owners, enthusiasts,
-              and individual installers.
+              Aegis Auto Film provides mobile installation and 
+              pick-up & delivery service for 
+              Calgary vehicle owners, enthusiasts.
             </p>
 
             <p className="mt-4 text-lg leading-8 text-neutral-400">
               Instead of requiring every customer to visit a shop, we focus on
-              flexible mobile service, clean installation standards, and practical
+              flexible service, clean installation standards, and practical
               protection packages designed for real driving conditions in Alberta.
+            </p>
+            <p className="mt-4 text-lg leading-8 text-neutral-400">
+              Maybe you are a individual installer, or DIY enthusiasts, 
+              contact us now for pre-cut PPF
             </p>
           </div>
 
@@ -241,17 +250,17 @@ export default function Home() {
             <h3 className="text-2xl font-semibold">Why Aegis Auto Film</h3>
 
             <ul className="mt-6 space-y-4 text-neutral-400">
-              <li>✓ Mobile service in Calgary and surrounding areas</li>
               <li>✓ Paint protection film for daily drivers and high-end vehicles</li>
               <li>✓ Pre-cut PPF kits for DIY users and installers</li>
-              <li>✓ Ceramic coating for gloss and easier maintenance</li>
+              <li>✓ Custom installation for specific inquiry</li>
               <li>✓ Practical packages based on real-world driving needs</li>
+              <li>✓ Mobile service in Calgary and surrounding areas</li>
             </ul>
           </div>
         </div>
       </section>
 
-
+              
       {/* Services */}
       <section id="services" className="border-t border-white/10 px-6 py-24">
         <div className="mx-auto max-w-6xl">
@@ -334,40 +343,63 @@ export default function Home() {
           <p className="mb-3 text-sm uppercase tracking-[0.3em] text-neutral-500">
             Pricing
           </p>
-          <>
-            <div className="mb-4 h-1 w-16 rounded-full bg-red-600" />
 
-            <h2 className="text-4xl font-bold">
-              Popular Packages
-            </h2>
-          </>
-          
+          <div className="mb-4 h-1 w-16 rounded-full bg-red-600" />
+
+          <h2 className="text-4xl font-bold">PPF Packages</h2>
+
+          <p className="mt-4 max-w-3xl text-neutral-400">
+            Choose from essential front-end protection, extended high-impact coverage,
+            or full vehicle protection. Final pricing may vary depending on vehicle
+            size, film type, and installation requirements.
+          </p>
+
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {pricing.map((plan, index) => (
               <div
                 key={plan.name}
-                  className={`rounded-3xl p-6 ${
-                    index === 1
-                      ? "border-2 border-red-600 bg-red-600/5"
-                      : "border border-white/10"
-                  }`}
+                className={`flex flex-col rounded-3xl p-6 transition ${
+                  index === 1
+                    ? "border-2 border-red-600 bg-red-600/5 shadow-lg shadow-red-600/10"
+                    : "border border-white/10 bg-neutral-900 hover:border-red-600"
+                }`}
               >
-                <h3 className="text-xl font-semibold">{plan.name}</h3>
+                <div className="flex items-start justify-between gap-3">
+                  <h3 className="text-xl font-semibold">{plan.name}</h3>
+
+                  {plan.badge && (
+                    <span className="shrink-0 rounded-full bg-red-600 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
+                      {plan.badge}
+                    </span>
+                  )}
+                </div>
+
                 <p className="mt-4 text-3xl font-bold">{plan.price}</p>
+
+                <p className="mt-3 text-sm leading-6 text-neutral-400">
+                  {plan.desc}
+                </p>
 
                 <ul className="mt-6 space-y-3 text-sm text-neutral-400">
                   {plan.items.map((item) => (
-                    <li key={item}>✓ {item}</li>
+                    <li key={item} className="flex gap-2">
+                      <span className="text-red-500">✓</span>
+                      <span>{item}</span>
+                    </li>
                   ))}
                 </ul>
+
+                {plan.name === "Max Package" && (
+                  <a
+                    href="#quote"
+                    className="mt-8 rounded-full bg-red-600 px-5 py-3 text-center text-sm font-semibold text-white transition hover:bg-red-700"
+                  >
+                    Request Custom Quote
+                  </a>
+                )}
               </div>
             ))}
           </div>
-
-          <p className="mt-6 text-sm text-neutral-500">
-            Final pricing may vary depending on vehicle size, condition, film
-            selection, and installation complexity.
-          </p>
         </div>
       </section>
 
@@ -384,9 +416,10 @@ export default function Home() {
 
             <div className="mt-10 grid gap-6 md:grid-cols-2">
               {cases.map((item) => (
-                <div
-                  key={item.title}
-                  className="group overflow-hidden rounded-3xl border border-white/10 bg-neutral-900 transition hover:border-red-600"
+                <Link
+                href={item.link || "#gallery"}
+                key={item.title}
+                className="group overflow-hidden rounded-3xl border border-white/10 bg-neutral-900 transition hover:border-red-600"
                 >
                   <div className="relative h-72 overflow-hidden">
                     <Image
@@ -414,11 +447,12 @@ export default function Home() {
                       {item.desc}
                     </p>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
         </section>
+
 
       {/* Quote Form */}
       <section id="quote" className="border-t border-red-600/20 px-6 py-24">
@@ -426,7 +460,7 @@ export default function Home() {
           <div className="mb-4 h-1 w-16 rounded-full bg-red-600" />
 
           <h2 className="text-4xl font-bold">
-            Request A Mobile PPF Quote
+            Request Quote For Your Vehicle
           </h2>
 
           <p className="mt-4 text-neutral-400">
