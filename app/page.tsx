@@ -207,7 +207,7 @@ export default function Home() {
             </a>
 
             <a
-              href="mailto:sales@aegisautofilm.com"
+              href="#quote"
               className="rounded-full border border-white/20 px-6 py-3 text-center font-semibold text-white transition hover:bg-white hover:text-black"
             >
               Get A Quote
@@ -532,135 +532,126 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section
-        id="contact"
-        className="border-t border-red-600/20 px-6 py-28"
-      >
-        <div className="mx-auto max-w-4xl text-center">
-
-          <div className="mx-auto mb-6 h-1 w-20 rounded-full bg-red-600" />
-
-          <h2 className="text-4xl font-bold md:text-5xl">
-            Ready To Protect Your Investment?
-          </h2>
-
-          <p className="mt-6 text-lg text-neutral-400">
-            Whether you're looking for Paint Protection Film,
-            Ceramic Coating, or Custom Pre-Cut PPF Kits,
-            we're here to help.
-          </p>
-
-          <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-
-            <a
-              href="tel:4038150249"
-              className="
-                rounded-full
-                bg-red-600
-                px-8
-                py-4
-                font-semibold
-                text-white
-                transition
-                hover:bg-red-700
-              "
-            >
-              Call Now
-            </a>
-
-            <a
-              href="mailto:sales@aegisautofilm.com"
-              className="
-                rounded-full
-                border
-                border-white/20
-                px-8
-                py-4
-                font-semibold
-                text-white
-                transition
-                hover:bg-white
-                hover:text-black
-              "
-            >
-              Request A Quote
-            </a>
-
-          </div>
-
-          <div className="mt-12 text-sm text-neutral-500">
-            Calgary, Alberta • Paint Protection Film • Ceramic Coating • Pre-Cut PPF Kits
-          </div>
-
-        </div>
-      </section>
-
 
       {/* Footer */}
-        <footer className="border-t border-red-600/20 bg-zinc-950 px-6 py-12">
-        <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-3">
-          <div>
-            <div className="flex items-center gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-100 p-1.5">
-                <Image
-                  src="/images/logo.png"
-                  alt="Aegis Auto Film logo"
-                  width={44}
-                  height={44}
-                  className="object-contain"
-                />
-              </div>
-
-              <div>
-                <p className="text-lg font-bold">Aegis Auto Film</p>
-                <div className="mt-1 h-[2px] w-16 rounded-full bg-red-600" />
-              </div>
-            </div>
-
-            <p className="mt-5 max-w-sm text-sm leading-6 text-neutral-400">
-              Mobile paint protection film, ceramic coating, and precision-cut PPF
-              kit solutions for Calgary vehicle owners and installers.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="font-semibold text-white">Services</h3>
-            <ul className="mt-4 space-y-3 text-sm text-neutral-400">
-              <li>Paint Protection Film</li>
-              <li>Pre-Cut PPF Kits</li>
-              <li>Ceramic Coating</li>
-              <li>Mobile Installation</li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-semibold text-white">Contact</h3>
-            <ul className="mt-4 space-y-3 text-sm text-neutral-400">
-              <li>
-                <a href="tel:4038150249" className="hover:text-red-500">
-                  403-815-0249
-                </a>
-              </li>
-              <li>
-                <a
-                  href="mailto:sales@aegisautofilm.com"
-                  className="hover:text-red-500"
-                >
-                  sales@aegisautofilm.com
-                </a>
-              </li>
-              <li>Mobile service in Calgary and surrounding areas</li>
-              <li>New location opening soon</li>
-            </ul>
-          </div>
+<footer className="border-t border-red-600/20 bg-zinc-950 px-6 py-14">
+  <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-2 md:items-start">
+    <div>
+      <div className="flex items-center gap-3">
+        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-100 p-1">
+          <Image
+            src="/images/logo.png"
+            alt="Aegis Auto Film logo"
+            width={44}
+            height={44}
+            className="object-contain"
+          />
         </div>
 
-        <div className="mx-auto mt-10 flex max-w-6xl flex-col gap-3 border-t border-white/10 pt-6 text-sm text-neutral-500 md:flex-row md:items-center md:justify-between">
-          <p>© 2026 Aegis Auto Film. All rights reserved.</p>
-          <p>Calgary, Alberta • Mobile PPF Installation</p>
+        <div>
+          <p className="text-lg font-bold">Aegis Auto Film</p>
+          <div className="mt-1 h-[2px] w-16 rounded-full bg-red-600" />
         </div>
-      </footer>
+      </div>
+
+      <p className="mt-5 max-w-sm text-sm leading-6 text-neutral-400">
+        Mobile paint protection film, ceramic coating, and pre-cut PPF kit
+        service in Calgary and surrounding areas.
+      </p>
+    </div>
+
+    <div className="md:justify-self-end">
+      <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-neutral-500">
+        Contact
+      </h3>
+
+      <div className="mt-5 flex flex-col gap-4 text-sm text-neutral-400">
+        {/* Phone */}
+        <a
+          href="tel:4038150249"
+          aria-label="Call Aegis Auto Film"
+          className="group flex items-center gap-3 transition hover:text-red-500"
+        >
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 bg-neutral-900 text-neutral-300 transition group-hover:border-red-600 group-hover:bg-red-600 group-hover:text-white">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="h-5 w-5"
+            >
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.32 1.77.59 2.61a2 2 0 0 1-.45 2.11L8 9.69a16 16 0 0 0 6.31 6.31l1.25-1.25a2 2 0 0 1 2.11-.45c.84.27 1.71.47 2.61.59A2 2 0 0 1 22 16.92z" />
+            </svg>
+          </span>
+
+          <span>403-815-0249</span>
+        </a>
+
+        {/* Email */}
+        <a
+          href="mailto:sales@aegisautofilm.com"
+          aria-label="Email Aegis Auto Film"
+          className="group flex items-center gap-3 transition hover:text-red-500"
+        >
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 bg-neutral-900 text-neutral-300 transition group-hover:border-red-600 group-hover:bg-red-600 group-hover:text-white">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="h-5 w-5"
+            >
+              <rect width="20" height="16" x="2" y="4" rx="2" />
+              <path d="m22 7-10 6L2 7" />
+            </svg>
+          </span>
+
+          <span>sales@aegisautofilm.com</span>
+        </a>
+
+        {/* Instagram */}
+        <a
+          href="https://www.instagram.com/aegisautofilm/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit Aegis Auto Film on Instagram"
+          className="group flex items-center gap-3 transition hover:text-red-500"
+        >
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 bg-neutral-900 text-neutral-300 transition group-hover:border-red-600 group-hover:bg-red-600 group-hover:text-white">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="h-5 w-5"
+            >
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <path d="M17.5 6.5h.01" />
+            </svg>
+          </span>
+
+          <span>Aegis Auto Film</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div className="mx-auto mt-12 flex max-w-6xl flex-col gap-3 border-t border-white/10 pt-6 text-sm text-neutral-500 md:flex-row md:items-center md:justify-between">
+    <p>© 2026 Aegis Auto Film LTD. All rights reserved.</p>
+
+    <p>Calgary, Alberta • PPF Service</p>
+  </div>
+</footer>
     </main>
   );
 }
