@@ -587,7 +587,7 @@ export default function Home() {
             </svg>
           </span>
 
-          <span>403-815-0249</span>
+          <span>825-982-8620</span>
         </a>
 
         {/* Email */}

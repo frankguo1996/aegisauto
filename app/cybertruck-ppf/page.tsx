@@ -342,7 +342,7 @@ export default function CybertruckPPFPage() {
 
           <div className="flex flex-col gap-2 text-sm text-neutral-400 md:text-right">
             <a href="tel:8259828620" className="hover:text-red-500">
-              403-815-0249
+              825-982-8620
             </a>
             <a
               href="mailto:sales@aegisautofilm.com"
