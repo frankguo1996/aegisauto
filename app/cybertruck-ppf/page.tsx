@@ -67,7 +67,7 @@ export default function CybertruckPPFPage() {
           </nav>
 
           <a
-            href="tel:4038150249"
+            href="tel:8259828620"
             className="rounded-full bg-red-600 px-5 py-2 text-sm font-semibold text-white transition hover:bg-red-700"
           >
             Call
@@ -114,7 +114,7 @@ export default function CybertruckPPFPage() {
             </a>
 
             <a
-              href="tel:4038150249"
+              href="tel:8259828620"
               className="rounded-full border border-white/20 px-6 py-3 text-center font-semibold text-white transition hover:bg-white hover:text-black"
             >
               Call Now
@@ -314,7 +314,7 @@ export default function CybertruckPPFPage() {
 
           <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
             <a
-              href="tel:4038150249"
+              href="tel:8259828620"
               className="rounded-full bg-red-600 px-8 py-4 font-semibold text-white transition hover:bg-red-700"
             >
               Call Now
@@ -341,7 +341,7 @@ export default function CybertruckPPFPage() {
           </div>
 
           <div className="flex flex-col gap-2 text-sm text-neutral-400 md:text-right">
-            <a href="tel:4038150249" className="hover:text-red-500">
+            <a href="tel:8259828620" className="hover:text-red-500">
               403-815-0249
             </a>
             <a
