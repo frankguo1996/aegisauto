@@ -200,7 +200,7 @@ export default function Home() {
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
 
             <a
-              href="tel:8259828620"
+              href="tel:8259826820"
               className="rounded-full bg-red-600 px-6 py-3 text-center font-semibold text-white transition hover:bg-red-700"
             >
               Call Now
@@ -568,7 +568,7 @@ export default function Home() {
       <div className="mt-5 flex flex-col gap-4 text-sm text-neutral-400">
         {/* Phone */}
         <a
-          href="tel:8259828620"
+          href="tel:8259826820"
           aria-label="Call Aegis Auto Film"
           className="group flex items-center gap-3 transition hover:text-red-500"
         >
@@ -587,7 +587,7 @@ export default function Home() {
             </svg>
           </span>
 
-          <span>825-982-8620</span>
+          <span>825-982-6820</span>
         </a>
 
         {/* Email */}
